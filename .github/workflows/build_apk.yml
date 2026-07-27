@@ -23,15 +23,32 @@ jobs:
         with:
           channel: 'stable'
 
+      - name: Find Flutter project directory
+        id: find_project
+        run: |
+          echo "Searching for pubspec.yaml..."
+          FILE=$(find . -maxdepth 6 -type f -name pubspec.yaml -print -quit || true)
+          if [ -z "$FILE" ]; then
+            echo "No pubspec.yaml found in the repository. Listing top-level files for debugging:" >&2
+            pwd
+            ls -la || true
+            find . -maxdepth 2 -type d -print || true
+            exit 1
+          fi
+          PROJECT_DIR=$(dirname "$FILE")
+          echo "Found pubspec at $FILE; project dir is $PROJECT_DIR"
+          echo "project_dir=$PROJECT_DIR" >> $GITHUB_OUTPUT
+
       - name: Install dependencies
+        working-directory: ${{ steps.find_project.outputs.project_dir }}
         run: flutter pub get
 
       - name: Build APK
+        working-directory: ${{ steps.find_project.outputs.project_dir }}
         run: flutter build apk --debug
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: app-debug
-          path: build/app/outputs/flutter-apk/app-debug.apk
-          
+          path: ${{ steps.find_project.outputs.project_dir }}/build/app/outputs/flutter-apk/app-debug.apk          
