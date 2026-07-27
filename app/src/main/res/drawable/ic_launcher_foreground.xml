@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Main Calendar Card -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,28h44c4.4,0 8,3.6 8,8v36c0,4.4 -3.6,8 -8,8H32c-4.4,0 -8,-3.6 -8,-8V36c0,-4.4 3.6,-8 8,-8z" />
+    <!-- Calendar Top Bar -->
+    <path
+        android:fillColor="#8E7CC3"
+        android:pathData="M32,28h44c4.4,0 8,3.6 8,8v8H24v-8c0,-4.4 3.6,-8 8,-8z" />
+    <!-- Binder Rings -->
+    <path
+        android:fillColor="#5A4E7F"
+        android:pathData="M36,22h4v8h-4zM68,22h4v8h-4z" />
+    <!-- Checkmark Path -->
+    <path
+        android:fillColor="#4ECDC4"
+        android:pathData="M44,56l6,6 14,-14 4,4 -18,18 -10,-10z" />
+</vector>

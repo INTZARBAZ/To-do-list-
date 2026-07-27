@@ -1,0 +1,6 @@
+{
+  "name": "Pastel To-Do & Calendar",
+  "description": "A local-first Android To-Do & Calendar app with soft pastel aesthetic, month calendar grid with event dots, subtasks, color-coded task cards, 24-hour pass ad engine, and notifications.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
