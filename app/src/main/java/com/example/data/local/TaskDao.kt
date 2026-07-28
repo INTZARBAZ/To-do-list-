@@ -22,6 +22,12 @@ interface TaskDao {
     @Query("SELECT * FROM tasks ORDER BY isCompleted ASC, dueDateMillis ASC, createdAt DESC")
     fun getAllTasksSync(): List<TaskEntity>
 
+    @Query("SELECT * FROM tasks WHERE id = :taskId")
+    fun getTaskByIdSync(taskId: Long): TaskEntity?
+
+    @Update
+    fun updateTaskSync(task: TaskEntity)
+
     @Transaction
     @Query("SELECT * FROM tasks WHERE id = :taskId")
     fun getTaskWithSubtasksById(taskId: Long): Flow<TaskWithSubtasks?>

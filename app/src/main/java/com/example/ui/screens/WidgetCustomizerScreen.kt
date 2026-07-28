@@ -241,6 +241,12 @@ fun WidgetCustomizerScreen(
                                         AccentSticker.SUN -> " ☀️"
                                         AccentSticker.FLOWER -> " 🌸"
                                         AccentSticker.PIN -> " 📌"
+                                        AccentSticker.HEART -> " 💖"
+                                        AccentSticker.PALETTE -> " 🎨"
+                                        AccentSticker.COFFEE -> " ☕"
+                                        AccentSticker.ARCH -> " 🏛️"
+                                        AccentSticker.SAKURA -> " 🌸"
+                                        AccentSticker.SPARKLE -> " ✨"
                                         AccentSticker.NONE -> ""
                                     }
                                     if (stickerEmoji.isNotEmpty()) {
@@ -369,9 +375,9 @@ fun WidgetCustomizerScreen(
                 }
             }
 
-            // BOTTOM SECTION: Horizontal Carousel of 6 Widget Theme Thumbnails
+            // BOTTOM SECTION: Horizontal Carousel of All Custom Theme Thumbnails
             Text(
-                text = "Core To-Do Themes (6 Presets)",
+                text = "Custom Stationery Themes (${catalogPresets.size} Presets)",
                 style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
                 color = MaterialTheme.colorScheme.onSurface,
                 modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)

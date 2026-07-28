@@ -3,6 +3,9 @@ package com.example.widget
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.StrikethroughSpan
 import android.widget.RemoteViews
 import android.widget.RemoteViewsService
 import com.example.R
@@ -48,7 +51,6 @@ class TaskWidgetViewsFactory(private val context: Context) : RemoteViewsService.
         val widgetTheme = passAndThemeManager.selectedWidgetTheme.value
         val colors = WidgetThemeConfig.getWidgetColors(widgetTheme)
 
-        views.setTextViewText(R.id.widget_item_title, task.title)
         views.setTextViewText(R.id.widget_item_category, task.category)
         views.setTextColor(R.id.widget_item_category, Color.parseColor(colors.subtextColorHex))
 
@@ -60,18 +62,28 @@ class TaskWidgetViewsFactory(private val context: Context) : RemoteViewsService.
         }
 
         if (task.isCompleted) {
+            val spannableTitle = SpannableString(task.title)
+            spannableTitle.setSpan(
+                StrikethroughSpan(),
+                0,
+                task.title.length,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+            views.setTextViewText(R.id.widget_item_title, spannableTitle)
             views.setTextViewText(R.id.widget_item_status, "✓")
             views.setTextColor(R.id.widget_item_status, Color.parseColor(colors.activeCheckColorHex))
             views.setTextColor(R.id.widget_item_title, Color.parseColor(colors.completedTextColorHex))
         } else {
+            views.setTextViewText(R.id.widget_item_title, task.title)
             views.setTextViewText(R.id.widget_item_status, "○")
             views.setTextColor(R.id.widget_item_status, Color.parseColor(colors.inactiveCheckColorHex))
             views.setTextColor(R.id.widget_item_title, Color.parseColor(colors.activeTextColorHex))
         }
 
         val fillInIntent = Intent().apply {
-            putExtra("taskId", task.id)
+            putExtra(TaskAppWidgetProvider.EXTRA_TASK_ID, task.id)
         }
+        views.setOnClickFillInIntent(R.id.widget_item_status, fillInIntent)
         views.setOnClickFillInIntent(R.id.widget_item_container, fillInIntent)
 
         return views

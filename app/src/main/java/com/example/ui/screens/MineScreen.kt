@@ -272,7 +272,7 @@ fun MineScreen(
                         Spacer(modifier = Modifier.width(8.dp))
                         Column {
                             Text(
-                                text = "App UI Theme (12 Presets)",
+                                text = "App UI Theme (${PastelPaletteType.values().size} Presets)",
                                 style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
                                 color = MaterialTheme.colorScheme.onSurface
                             )

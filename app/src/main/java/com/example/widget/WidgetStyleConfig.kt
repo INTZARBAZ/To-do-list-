@@ -14,7 +14,14 @@ enum class PatternType {
     RAINBOW_ROWS,
     DASHED_LINES,
     SAGE_PLANNER,
-    SUNBURST_PERIWINKLE
+    SUNBURST_PERIWINKLE,
+    RAINBOW_DOODLE,
+    BLUE_OIL_PAINT,
+    LIME_HIGHLIGHTER,
+    COZY_LATTE,
+    TERRACOTTA_ARCH,
+    BLOSSOM_CHECKLIST,
+    KAWAII_PINK
 }
 
 enum class WidgetFontFamily {
@@ -27,7 +34,13 @@ enum class AccentSticker {
     NONE,
     SUN,
     FLOWER,
-    PIN
+    PIN,
+    HEART,
+    PALETTE,
+    COFFEE,
+    ARCH,
+    SAKURA,
+    SPARKLE
 }
 
 enum class RowHighlightStyle {
@@ -187,6 +200,152 @@ object WidgetThemeCatalog {
             fontFamily = WidgetFontFamily.STANDARD,
             patternType = PatternType.SUNBURST_PERIWINKLE,
             accentSticker = AccentSticker.SUN
+        ),
+
+        // Theme 7: Rainbow Doodle (Pass Required)
+        WidgetStyleConfig(
+            id = "rainbow_doodle",
+            paletteType = PastelPaletteType.RAINBOW_DOODLE,
+            name = "Rainbow Doodle",
+            description = "Playful magenta border with thin colored horizontal notebook lines",
+            tier = ThemeTier.STANDARD_PREMIUM,
+            backgroundColorHex = "#FFFFFF",
+            borderColorHex = "#A2007C",
+            titleColorHex = "#A2007C",
+            subtextColorHex = "#E91E63",
+            itemBgColorHex = "#FFF5F8",
+            activeCheckColorHex = "#A2007C",
+            inactiveCheckColorHex = "#A2007C",
+            activeTextColorHex = "#212121",
+            completedTextColorHex = "#BDBDBD",
+            fontFamily = WidgetFontFamily.HANDWRITTEN,
+            patternType = PatternType.RAINBOW_DOODLE,
+            accentSticker = AccentSticker.HEART
+        ),
+
+        // Theme 8: Blue Oil Paint (Pass Required)
+        WidgetStyleConfig(
+            id = "blue_oil_paint",
+            paletteType = PastelPaletteType.BLUE_OIL_PAINT,
+            name = "Blue Oil Paint",
+            description = "Deep cobalt blue canvas with warm ochre yellow stroke accents",
+            tier = ThemeTier.STANDARD_PREMIUM,
+            backgroundColorHex = "#0038A8",
+            borderColorHex = "#F4C430",
+            titleColorHex = "#F4C430",
+            subtextColorHex = "#E0E0E0",
+            itemBgColorHex = "#002366",
+            activeCheckColorHex = "#F4C430",
+            inactiveCheckColorHex = "#F4C430",
+            activeTextColorHex = "#FFFFFF",
+            completedTextColorHex = "#90CAF9",
+            fontFamily = WidgetFontFamily.MONOSPACE,
+            patternType = PatternType.BLUE_OIL_PAINT,
+            accentSticker = AccentSticker.PALETTE
+        ),
+
+        // Theme 9: Lime Highlighter (Pass Required)
+        WidgetStyleConfig(
+            id = "lime_highlighter",
+            paletteType = PastelPaletteType.LIME_HIGHLIGHTER,
+            name = "Lime Highlighter",
+            description = "Clean white canvas with neon lime header highlight and soft gray lines",
+            tier = ThemeTier.STANDARD_PREMIUM,
+            backgroundColorHex = "#FFFFFF",
+            borderColorHex = "#B5FF39",
+            titleColorHex = "#1B5E20",
+            subtextColorHex = "#424242",
+            itemBgColorHex = "#FAFAFA",
+            activeCheckColorHex = "#212121",
+            inactiveCheckColorHex = "#212121",
+            activeTextColorHex = "#212121",
+            completedTextColorHex = "#9E9E9E",
+            fontFamily = WidgetFontFamily.STANDARD,
+            patternType = PatternType.LIME_HIGHLIGHTER
+        ),
+
+        // Theme 10: Cozy Latte (Pass Required)
+        WidgetStyleConfig(
+            id = "cozy_latte",
+            paletteType = PastelPaletteType.COZY_LATTE,
+            name = "Cozy Latte",
+            description = "Warm cafe cream background with espresso brown borders and soft typography",
+            tier = ThemeTier.GOLD_VIP,
+            backgroundColorHex = "#FAF0E6",
+            borderColorHex = "#4A2C2A",
+            titleColorHex = "#4A2C2A",
+            subtextColorHex = "#8D6E63",
+            itemBgColorHex = "#F5E6D3",
+            activeCheckColorHex = "#4A2C2A",
+            inactiveCheckColorHex = "#4A2C2A",
+            activeTextColorHex = "#3E2723",
+            completedTextColorHex = "#A1887F",
+            fontFamily = WidgetFontFamily.HANDWRITTEN,
+            patternType = PatternType.COZY_LATTE,
+            accentSticker = AccentSticker.COFFEE
+        ),
+
+        // Theme 11: Terracotta Arch (Pass Required)
+        WidgetStyleConfig(
+            id = "terracotta_arch",
+            paletteType = PastelPaletteType.TERRACOTTA_ARCH,
+            name = "Terracotta Arch",
+            description = "Muted sand linen canvas with warm clay arch geometry and sage accents",
+            tier = ThemeTier.GOLD_VIP,
+            backgroundColorHex = "#F4EBE1",
+            borderColorHex = "#C85A32",
+            titleColorHex = "#C85A32",
+            subtextColorHex = "#8A9A86",
+            itemBgColorHex = "#FFF8F0",
+            activeCheckColorHex = "#C85A32",
+            inactiveCheckColorHex = "#C85A32",
+            activeTextColorHex = "#3E2723",
+            completedTextColorHex = "#BCAAA4",
+            fontFamily = WidgetFontFamily.STANDARD,
+            patternType = PatternType.TERRACOTTA_ARCH,
+            accentSticker = AccentSticker.ARCH
+        ),
+
+        // Theme 12: Blossom Checklist (Pass Required)
+        WidgetStyleConfig(
+            id = "blossom_checklist",
+            paletteType = PastelPaletteType.BLOSSOM_CHECKLIST,
+            name = "Blossom Checklist",
+            description = "Soft blossom cream canvas with sakura flower petal drawings and soft script",
+            tier = ThemeTier.GOLD_VIP,
+            backgroundColorHex = "#FFF5F6",
+            borderColorHex = "#FFB7C5",
+            titleColorHex = "#C2185B",
+            subtextColorHex = "#90B77D",
+            itemBgColorHex = "#FFFFFF",
+            activeCheckColorHex = "#E91E63",
+            inactiveCheckColorHex = "#C2185B",
+            activeTextColorHex = "#4A148C",
+            completedTextColorHex = "#F48FB1",
+            fontFamily = WidgetFontFamily.HANDWRITTEN,
+            patternType = PatternType.BLOSSOM_CHECKLIST,
+            accentSticker = AccentSticker.SAKURA
+        ),
+
+        // Theme 13: Kawaii Pink Motivation (Pass Required)
+        WidgetStyleConfig(
+            id = "kawaii_pink",
+            paletteType = PastelPaletteType.KAWAII_PINK,
+            name = "Kawaii Pink Motivation",
+            description = "Pastel strawberry pink with bright kawaii pink accents and sparkle stars",
+            tier = ThemeTier.GOLD_VIP,
+            backgroundColorHex = "#FFE4E1",
+            borderColorHex = "#FF69B4",
+            titleColorHex = "#FF1493",
+            subtextColorHex = "#F50057",
+            itemBgColorHex = "#FFF0F5",
+            activeCheckColorHex = "#FF1493",
+            inactiveCheckColorHex = "#FF69B4",
+            activeTextColorHex = "#880E4F",
+            completedTextColorHex = "#FF80AB",
+            fontFamily = WidgetFontFamily.HANDWRITTEN,
+            patternType = PatternType.KAWAII_PINK,
+            accentSticker = AccentSticker.SPARKLE
         )
     )
 

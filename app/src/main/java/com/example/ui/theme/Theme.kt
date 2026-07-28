@@ -169,6 +169,104 @@ private val WarmNeutralColorScheme = lightColorScheme(
     background = Color(0xFFFAF8F5)
 )
 
+// 12. Rainbow Doodle
+private val RainbowDoodleColorScheme = lightColorScheme(
+    primary = Color(0xFFA2007C),
+    secondary = Color(0xFF00ACC1),
+    primaryContainer = Color(0xFFFCE4EC),
+    secondaryContainer = Color(0xFFE0F7FA),
+    surface = Color.White,
+    onPrimary = Color.White,
+    onSecondary = Color.White,
+    onSurface = Color(0xFF212121),
+    onSurfaceVariant = Color(0xFF757575),
+    background = Color(0xFFFFFFFF)
+)
+
+// 13. Blue Oil Paint
+private val BlueOilPaintColorScheme = lightColorScheme(
+    primary = Color(0xFF0038A8),
+    secondary = Color(0xFFF4C430),
+    primaryContainer = Color(0xFFE3F2FD),
+    secondaryContainer = Color(0xFFFFF8E1),
+    surface = Color.White,
+    onPrimary = Color.White,
+    onSecondary = Color(0xFF3E2723),
+    onSurface = Color(0xFF0D47A1),
+    onSurfaceVariant = Color(0xFF1565C0),
+    background = Color(0xFFF5F7FA)
+)
+
+// 14. Lime Highlighter
+private val LimeHighlighterColorScheme = lightColorScheme(
+    primary = Color(0xFF2E7D32),
+    secondary = Color(0xFFB5FF39),
+    primaryContainer = Color(0xFFE8F5E9),
+    secondaryContainer = Color(0xFFF4FF81),
+    surface = Color.White,
+    onPrimary = Color.White,
+    onSecondary = Color.Black,
+    onSurface = Color(0xFF212121),
+    onSurfaceVariant = Color(0xFF616161),
+    background = Color(0xFFFAFAFA)
+)
+
+// 15. Cozy Latte
+private val CozyLatteColorScheme = lightColorScheme(
+    primary = Color(0xFF4A2C2A),
+    secondary = Color(0xFF8D6E63),
+    primaryContainer = Color(0xFFF5E6D3),
+    secondaryContainer = Color(0xFFEFEBE9),
+    surface = Color(0xFFFAF0E6),
+    onPrimary = Color.White,
+    onSecondary = Color.White,
+    onSurface = Color(0xFF3E2723),
+    onSurfaceVariant = Color(0xFF5D4037),
+    background = Color(0xFFFAF0E6)
+)
+
+// 16. Terracotta Arch
+private val TerracottaArchColorScheme = lightColorScheme(
+    primary = Color(0xFFC85A32),
+    secondary = Color(0xFF8A9A86),
+    primaryContainer = Color(0xFFFBE9E7),
+    secondaryContainer = Color(0xFFE8F5E9),
+    surface = Color(0xFFF4EBE1),
+    onPrimary = Color.White,
+    onSecondary = Color.White,
+    onSurface = Color(0xFF3E2723),
+    onSurfaceVariant = Color(0xFF6D4C41),
+    background = Color(0xFFF4EBE1)
+)
+
+// 17. Blossom Checklist
+private val BlossomChecklistColorScheme = lightColorScheme(
+    primary = Color(0xFFE91E63),
+    secondary = Color(0xFF90B77D),
+    primaryContainer = Color(0xFFFFEBEE),
+    secondaryContainer = Color(0xFFF1F8E9),
+    surface = Color(0xFFFFF5F6),
+    onPrimary = Color.White,
+    onSecondary = Color.White,
+    onSurface = Color(0xFF880E4F),
+    onSurfaceVariant = Color(0xFFAD1457),
+    background = Color(0xFFFFF5F6)
+)
+
+// 18. Kawaii Pink Motivation
+private val KawaiiPinkColorScheme = lightColorScheme(
+    primary = Color(0xFFFF1493),
+    secondary = Color(0xFFFFD700),
+    primaryContainer = Color(0xFFFFE4E1),
+    secondaryContainer = Color(0xFFFFF8E1),
+    surface = Color(0xFFFFF0F5),
+    onPrimary = Color.White,
+    onSecondary = Color(0xFF3E2723),
+    onSurface = Color(0xFF880E4F),
+    onSurfaceVariant = Color(0xFFC2185B),
+    background = Color(0xFFFFE4E1)
+)
+
 @Composable
 fun PastelTodoTheme(
     paletteType: PastelPaletteType = PastelPaletteType.LAVENDER,
@@ -190,6 +288,13 @@ fun PastelTodoTheme(
         PastelPaletteType.TERMINAL -> TerminalColorScheme
         PastelPaletteType.GLASSMORPHISM -> GlassmorphismColorScheme
         PastelPaletteType.WARM_NEUTRAL -> WarmNeutralColorScheme
+        PastelPaletteType.RAINBOW_DOODLE -> RainbowDoodleColorScheme
+        PastelPaletteType.BLUE_OIL_PAINT -> BlueOilPaintColorScheme
+        PastelPaletteType.LIME_HIGHLIGHTER -> LimeHighlighterColorScheme
+        PastelPaletteType.COZY_LATTE -> CozyLatteColorScheme
+        PastelPaletteType.TERRACOTTA_ARCH -> TerracottaArchColorScheme
+        PastelPaletteType.BLOSSOM_CHECKLIST -> BlossomChecklistColorScheme
+        PastelPaletteType.KAWAII_PINK -> KawaiiPinkColorScheme
         PastelPaletteType.MATERIAL_YOU -> {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                 if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
